@@ -10,3 +10,8 @@ gallery-6.jpg – facial / skin
 storefront.jpg (landscape, 16:10)
 
 Until a file exists, the site shows a labelled placeholder in its place.
+
+Extra slots (pages added later):
+gallery-7.jpg to gallery-12.jpg (gallery page; 7 and 10 are portrait)
+about.jpg (portrait 4:5), team-1.jpg to team-3.jpg (portrait 4:5)
+map.jpg (landscape 16:9) – or replace it with a Google Maps iframe in contact.html
