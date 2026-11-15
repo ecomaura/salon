@@ -73,13 +73,22 @@ footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;background:#1fa855;color:#fff;border-radius:50px;padding:13px 20px 13px 16px;display:flex;gap:9px;align-items:center;text-decoration:none;font-weight:500;font-size:15px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
 .wa svg{width:24px;height:24px;fill:#fff}
-@media(max-width:800px){nav ul{display:none}.hero .wrap,.book,.menu,.why,.quotes{grid-template-columns:1fr}.hero .wrap{gap:36px}.panel{aspect-ratio:3/3.2;max-width:340px}.book{gap:36px}section{padding:54px 0}}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.panel:before{z-index:2}.panel:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.65))}.panel .big,.panel small{z-index:3}
+.ph{position:relative;margin:0;overflow:hidden;background:repeating-linear-gradient(135deg,var(--surface),var(--surface) 10px,var(--bg) 10px,var(--bg) 20px);border:1px solid var(--line)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph .hint{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;font-size:13px;color:var(--muted);padding:10px}
+.ph .hint i{font-style:normal;font-size:11px;opacity:.7}
+.ph.empty .hint{display:flex}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:12px}
+.gal .a{grid-row:span 2}
+.store{aspect-ratio:16/10;margin:0 0 22px}
+@media(max-width:800px){.gal{grid-template-columns:1fr 1fr}nav ul{display:none}.hero .wrap,.book,.menu,.why,.quotes{grid-template-columns:1fr}.hero .wrap{gap:36px}.panel{aspect-ratio:3/3.2;max-width:340px}.book{gap:36px}section{padding:54px 0}}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
 <a class="logo" href="#top">Vinod <b>Hair Lines</b></a>
-<ul><li><a href="#services">Services</a></li><li><a href="#why">Why us</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#book">Visit</a></li></ul>
+<ul><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#why">Why us</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#book">Visit</a></li></ul>
 <a class="btn" href="#book" style="padding:9px 18px;font-size:14px">Book</a>
 </div></nav>
 
@@ -90,7 +99,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <p>Cuts, colour, beard work, skin and bridal – for everyone in the family, under one roof. Walk in or book on WhatsApp.</p>
 <div class="cta"><a class="btn" href="#book">Book an appointment</a><a class="btn ghost" href="#services">See price list</a></div>
 </div>
-<div class="panel"><div class="big">Vinod<br>Hair Lines</div><small>Men · Women · Kids</small></div>
+<div class="panel"><img src="images/hero.jpg" alt="Stylist finishing a haircut at Vinod Hair Lines" onerror="this.remove()"><div class="big">Vinod<br>Hair Lines</div><small>Men · Women · Kids</small></div>
 </div></header>
 
 <section id="services"><div class="wrap">
@@ -100,6 +109,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </div>
 <div class="menu" id="menu"></div>
 </div></section>
+
+<section id="gallery" style="padding-top:0"><div class="wrap">
+<div class="head"><h2>Our work</h2><p>A look at the chairs, the colour room and recent transformations.</p></div>
+<div class="gal">
+<figure class="ph a"><img loading="lazy" src="images/gallery-1.jpg" alt="Men’s fade haircut" onerror="var p=this.parentNode;this.remove();p.classList.add('empty')"><figcaption class="hint">Men’s fade / beard<i>images/gallery-1.jpg</i></figcaption></figure>
+<figure class="ph"><img loading="lazy" src="images/gallery-2.jpg" alt="Women’s layered cut" onerror="var p=this.parentNode;this.remove();p.classList.add('empty')"><figcaption class="hint">Women’s layered cut<i>images/gallery-2.jpg</i></figcaption></figure>
+<figure class="ph"><img loading="lazy" src="images/gallery-3.jpg" alt="Hair colour and highlights" onerror="var p=this.parentNode;this.remove();p.classList.add('empty')"><figcaption class="hint">Colour &amp; highlights<i>images/gallery-3.jpg</i></figcaption></figure>
+<figure class="ph a"><img loading="lazy" src="images/gallery-4.jpg" alt="Bridal hair and makeup" onerror="var p=this.parentNode;this.remove();p.classList.add('empty')"><figcaption class="hint">Bridal look<i>images/gallery-4.jpg</i></figcaption></figure>
+<figure class="ph"><img loading="lazy" src="images/gallery-5.jpg" alt="Salon interior with styling chairs" onerror="var p=this.parentNode;this.remove();p.classList.add('empty')"><figcaption class="hint">Salon interior<i>images/gallery-5.jpg</i></figcaption></figure>
+<figure class="ph"><img loading="lazy" src="images/gallery-6.jpg" alt="Facial and skin care treatment" onerror="var p=this.parentNode;this.remove();p.classList.add('empty')"><figcaption class="hint">Facial &amp; skin care<i>images/gallery-6.jpg</i></figcaption></figure>
+</div></div></section>
 
 <section class="dark" id="why"><div class="wrap why">
 <div><div class="n">01</div><h3>Trained hands</h3><p>Every stylist is trained in cutting for different hair types, from fine and straight to thick and curly.</p></div>
@@ -120,6 +140,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <div>
 <div class="eyebrow">Visit us</div>
 <h2>Book your seat</h2>
+<figure class="ph store" style="margin-top:20px"><img loading="lazy" src="images/storefront.jpg" alt="Vinod Hair Lines salon front" onerror="var p=this.parentNode;this.remove();p.classList.add('empty')"><figcaption class="hint">Salon storefront<i>images/storefront.jpg</i></figcaption></figure>
 <p class="info">Fill the form and it opens WhatsApp with your request ready to send. We’ll confirm your slot there.</p>
 <p class="info"><b>Hours</b><br>Mon – Sat: 10:00 am – 9:00 pm<br>Sunday: 10:00 am – 7:00 pm</p>
 <p class="info"><b>Address</b><br>Shop address, Landmark, City</p>
