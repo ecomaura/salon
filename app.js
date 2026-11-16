@@ -2,7 +2,7 @@ var WA="919999999999"; // country code + number, no + or spaces
 var S=[["m","Haircut","Classic, fade or scissor cut",150],["m","Beard styling","Shape-up with hot towel finish",100],["m","Hair spa","Deep conditioning with scalp massage",500],["m","Global colour","Ammonia-free options available",800],["m","Head massage","20 minutes, oil of your choice",150],["w","Haircut & blow-dry","Trim, layers or a full restyle",400],["w","Colour & highlights","Root touch-up to full balayage",1200],["w","Keratin smoothening","Price varies with hair length",3500],["w","Hair spa","Repair and shine treatment",800],["w","Threading & waxing","Brows, upper lip, arms and legs",60],["s","Cleanup","A quick refresh for tired skin",400],["s","Facial","Fruit, gold or de-tan",800],["s","Manicure & pedicure","Soak, scrub, shape and polish",600],["s","Bridal package","Makeup, hair and draping, after a consult",9000]];
 var $=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))};
 var nav=$(".nav");function sc(){nav.classList.toggle("s",scrollY>40)}sc();addEventListener("scroll",sc,{passive:true});
-$(".bur").onclick=function(){nav.classList.toggle("o")};
+function tg(o){nav.classList.toggle("o",o);document.body.style.overflow=o?"hidden":""}$(".bur").onclick=function(){tg(!nav.classList.contains("o"))};$$(".links a").forEach(function(a){a.addEventListener("click",function(){tg(false)})});addEventListener("resize",function(){if(innerWidth>900)tg(false)});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
 $$(".r").forEach(function(e){io.observe(e)});
 var menu=$("#menu"),svc=$("#svc");
