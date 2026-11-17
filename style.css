@@ -67,3 +67,8 @@ footer{background:var(--ink);color:#bbb;padding:56px 0 30px;font-size:15px}.fg{d
 .note{margin-top:30px;border:2px dashed var(--ink);padding:16px 18px;font-size:15px;background:#fff}.note a{color:var(--red);text-decoration:underline;font-weight:500}
 .vid video{display:block;width:100%;max-width:340px;max-height:80vh;margin:0 auto;border:3px solid #fff;box-shadow:12px 12px 0 var(--red);background:#000}
 .dk .two p{color:#bbb}.map iframe{width:100%;height:100%;border:0;filter:grayscale(.3)}
+
+.off{list-style:none;counter-reset:o;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0;margin:0}
+.off li{counter-increment:o;background:#fff;border:2px solid var(--ink);padding:14px 18px;font:700 22px "Barlow Condensed",sans-serif;letter-spacing:.03em;text-transform:uppercase;display:flex;gap:14px;align-items:center;transition:.15s}
+.off li:before{content:counter(o,decimal-leading-zero);color:var(--red)}.off li:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
+@media(max-width:900px){.off{grid-template-columns:1fr}}

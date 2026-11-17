@@ -1,4 +1,4 @@
-var WA="919999999999"; // country code + number, no + or spaces
+var WA="919500378989"; // country code + number, no + or spaces
 var S=[
 ["pop","hair","Hair Cutting","கட்டிங் மட்டும்",150],
 ["pop","combo","Hair Cutting & Shaving","கட்டிங் சேவிங்",250],
