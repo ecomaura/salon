@@ -31,7 +31,10 @@ var sel=[];try{sel=JSON.parse(sessionStorage.getItem("vhl")||"[]")}catch(e){}
 function save(){try{sessionStorage.setItem("vhl",JSON.stringify(sel))}catch(e){}}
 function items(){return sel.map(function(i){return S[i]}).filter(Boolean)}
 function total(){return items().reduce(function(a,x){return a+x[4]},0)}
-function pl(x){return "₹"+(x[5]||x[4])}function tot(){return ""+tot()+(items().some(function(x){return x[5]})?"+":"")}function msgList(){return items().map(function(x){return x[2]+" ("+pl(x)+")"}).join(", ")}
+function pl(x){return "₹"+(x[5]||x[4])}function tot(){return "₹"+total()+(items().some(function(x){return x[5]})?"+":"")}function msgList(){return items().map(function(x){return x[2]+" ("+pl(x)+")"}).join(", ")}
+document.documentElement.classList.add("js");
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});$$(".r").forEach(function(e){io.observe(e)});
 var tray=$(".tray");
 function paint(){var n=sel.length;if(tray){tray.classList.toggle("on",n>0);document.body.classList.toggle("ht",n>0);$("#tn").textContent=n+" selected · "+tot();$("#tl").textContent=items().map(function(x){return x[2]}).join(", ")}
  $$(".card").forEach(function(c){var on=sel.indexOf(+c.dataset.i)>-1;c.classList.toggle("on",on);c.querySelector(".ad").textContent=on?"✓ Added":"+ Add"});
@@ -49,8 +52,6 @@ var d=new Date(),h=d.getHours()+d.getMinutes()/60,close=d.getDay()===0?19:21,hol
 $$(".st").forEach(function(e){e.classList.toggle("open",op);e.textContent=hol?"Closed today · monthly holiday":op?"Open now · till "+(close-12)+" pm":"Closed · opens 10 am"});
 /* menu */
 var hd=$(".top");$(".bur").onclick=function(){hd.classList.toggle("o")};
-/* reveal */
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});$$(".r").forEach(function(e){io.observe(e)});
 /* gallery */
 var gi=$$(".gi"),lb=$(".lb"),li=0;
 if(lb){function show(n){var v=gi.filter(function(g){return !g.hidden});li=(n+v.length)%v.length;$(".lb img").src=v[li].dataset.big;lb.classList.add("on");lb._v=v}
@@ -60,5 +61,5 @@ if(lb){function show(n){var v=gi.filter(function(g){return !g.hidden});li=(n+v.l
  addEventListener("keydown",function(e){if(!lb.classList.contains("on"))return;if(e.key==="Escape")lb.classList.remove("on");if(e.key==="ArrowLeft")show(li-1);if(e.key==="ArrowRight")show(li+1)});
  $$(".tab[data-g]").forEach(function(b){b.onclick=function(){$$(".tab[data-g]").forEach(function(t){t.classList.remove("on")});b.classList.add("on");gi.forEach(function(g){g.hidden=!(b.dataset.g==="all"||g.dataset.c===b.dataset.g)})}})}
 /* booking */
-var f=$("#f");if(f){var dt=f.d;dt.min=new Date().toISOString().split("T")[0];
- f.onsubmit=function(e){e.preventDefault();var s=f.querySelector("[name=t]:checked");window.open(wa("Hi Vinod Hair Lines! I’d like to book.\nName: "+f.n.value+"\nServices: "+(sel.length?msgList()+" | Est. "+tot():"to be discussed")+"\nDate: "+f.d.value+"\nTime: "+(s?s.value:"any")),"_blank")}}
+var f=$("#f");if(f){var dt=f.elements.d;dt.min=new Date().toISOString().split("T")[0];
+ f.onsubmit=function(e){e.preventDefault();var s=f.querySelector("[name=t]:checked");window.open(wa("Hi Vinod Hair Lines! I’d like to book.\nName: "+f.elements.n.value+"\nServices: "+(sel.length?msgList()+" | Est. "+tot():"to be discussed")+"\nDate: "+f.elements.d.value+"\nTime: "+(s?s.value:"any")),"_blank")}}

@@ -58,8 +58,8 @@ input{font:400 17px Barlow,sans-serif;padding:11px 12px;border:2px solid var(--i
 .sm{border:2px dashed var(--ink);padding:14px 16px;font-size:15px;background:#faf9f6}.sm b{font:700 20px "Barlow Condensed";letter-spacing:.04em}.sm a{color:var(--red);text-decoration:underline}
 footer{background:var(--ink);color:#bbb;padding:56px 0 30px;font-size:15px}.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}.fg b{display:block;font:700 17px "Barlow Condensed";letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:8px}.fg a{display:block}.fg a:hover{color:var(--red)}.cp{border-top:1px solid #333;margin-top:34px;padding-top:18px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;background:#1fa855;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);width:56px;height:56px;display:grid;place-items:center;transition:.3s}.wa svg{width:30px;height:30px;fill:#fff}body.ht .wa{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
-.r{opacity:0;transform:translateY(24px);transition:.6s}.r.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;transform:none}}
+.js .r{opacity:0;transform:translateY(24px);transition:.6s}.js .r.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .r{opacity:1;transform:none}}
 @media(max-width:900px){.bur{display:block}.nl{display:none;position:absolute;left:0;right:0;top:68px;background:var(--ink);flex-direction:column;align-items:stretch;gap:0;padding:6px 22px 22px;border-top:1px solid #333}.top.o .nl{display:flex}.nl a:not(.btn){padding:14px 0;border-bottom:1px solid #2a2a2a}.nl .btn{margin-top:14px;text-align:center}
 .hero{padding:40px 0 60px}.hero .w,.two,.bk{grid-template-columns:1fr;gap:44px}.hi .tag{left:8px}.grid,.rv{grid-template-columns:1fr}.tiles{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr 1fr}.sec{padding:60px 0}.tray small{display:none}}
 
