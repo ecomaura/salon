@@ -72,3 +72,11 @@ footer{background:var(--ink);color:#bbb;padding:56px 0 30px;font-size:15px}.fg{d
 .off li{counter-increment:o;background:#fff;border:2px solid var(--ink);padding:14px 18px;font:700 22px "Barlow Condensed",sans-serif;letter-spacing:.03em;text-transform:uppercase;display:flex;gap:14px;align-items:center;transition:.15s}
 .off li:before{content:counter(o,decimal-leading-zero);color:var(--red)}.off li:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
 @media(max-width:900px){.off{grid-template-columns:1fr}}
+.fg>*,.tiles>*,.grid>*,.two>*,.bk>*{min-width:0}
+.fg,.inf,.tile,.sm{overflow-wrap:anywhere}
+@media(max-width:900px){.tiles,.tiles[style]{grid-template-columns:1fr 1fr!important;gap:12px}.tile{padding:18px}.tile b{font-size:40px}.tile h3{font-size:22px}.fg{grid-template-columns:1fr!important}.hero h1{font-size:clamp(48px,15vw,90px)}}
+html,body{max-width:100%;overflow-x:clip}
+.hb{display:flex;gap:16px;flex-wrap:wrap}
+.logo{white-space:nowrap}
+@media(max-width:900px){.logo{font-size:25px}.hb .btn{flex:1 1 auto;text-align:center}}
+@media(max-width:380px){.logo{font-size:20px}.bur{padding:5px 10px;font-size:15px}.w{padding:0 16px}}
