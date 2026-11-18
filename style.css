@@ -80,3 +80,8 @@ html,body{max-width:100%;overflow-x:clip}
 .logo{white-space:nowrap}
 @media(max-width:900px){.logo{font-size:25px}.hb .btn{flex:1 1 auto;text-align:center}}
 @media(max-width:380px){.logo{font-size:20px}.bur{padding:5px 10px;font-size:15px}.w{padding:0 16px}}
+
+.oc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.oc>div{background:#fff;border:2px solid var(--ink);padding:24px;transition:.15s}.oc>div:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}.oc b{font:700 20px "Barlow Condensed";color:var(--red);letter-spacing:.08em}.oc h3{font-size:30px;margin:4px 0 12px}.oc ul{list-style:none;padding:0;margin:0}.oc li{padding:6px 0 6px 22px;position:relative;border-top:1px solid #ddd;font-size:16px}.oc li:before{content:"";position:absolute;left:0;top:15px;width:10px;height:10px;background:var(--red)}
+.chk{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}.chk li{border:2px solid #fff;padding:14px 18px 14px 54px;position:relative;font-size:18px;transition:.15s}.chk li:hover{border-color:var(--red)}.chk li:before{content:"✓";position:absolute;left:18px;top:8px;color:var(--red);font:700 28px "Barlow Condensed"}
+.cta p{font:700 clamp(18px,2.4vw,24px) "Barlow Condensed",sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:0 0 26px}
+@media(max-width:900px){.oc,.chk{grid-template-columns:1fr}}
