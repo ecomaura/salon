@@ -48,8 +48,8 @@ $$(".walink").forEach(function(a){a.href=wa("Hi Vinod Hair Lines, I’d like to 
 if(tray){$("#tx").onclick=function(){sel=[];save();paint()};$("#tw").onclick=function(){window.open(wa("Hi Vinod Hair Lines! I’d like to book:\n"+msgList()+"\nEstimated total: "+tot()),"_blank")}}
 paint();
 /* open / closed */
-var d=new Date(),h=d.getHours()+d.getMinutes()/60,close=d.getDay()===0?19:21,hol=d.getDay()===2&&d.getDate()+7>new Date(d.getFullYear(),d.getMonth()+1,0).getDate(),op=!hol&&h>=10&&h<close;
-$$(".st").forEach(function(e){e.classList.toggle("open",op);e.textContent=hol?"Closed today · monthly holiday":op?"Open now · till "+(close-12)+" pm":"Closed · opens 10 am"});
+var d=new Date(Date.now()+new Date().getTimezoneOffset()*60000+19800000),h=d.getHours()+d.getMinutes()/60,hol=d.getDay()===2&&d.getDate()+7>new Date(d.getFullYear(),d.getMonth()+1,0).getDate(),op=!hol&&h>=7.5&&h<21.5;
+$$(".st").forEach(function(e){e.classList.toggle("open",op);e.textContent=hol?"Closed today · monthly holiday":op?"Open now · till 9:30 pm":"Closed · opens 7:30 am"});
 /* menu */
 var hd=$(".top");$(".bur").onclick=function(){hd.classList.toggle("o")};
 /* gallery */
